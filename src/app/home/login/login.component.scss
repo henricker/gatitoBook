@@ -1,0 +1,118 @@
+.login-container {
+
+  margin-top: -6rem;
+
+  width: 26rem;
+  height: 35rem;
+  background-color: rgba(202, 207, 212, .6);
+  padding: 1rem;
+  border-radius: .5rem;
+
+  &__title {
+    font-size: 2.3rem;
+    text-align: center;
+    color: #313131;
+    margin-bottom: 5rem;
+  }
+
+  &__form {
+    width: 100%;
+    margin-top: -2rem;
+
+    &__item {
+      text-align: center;
+      margin-bottom: 2rem;
+      &__label {
+        font-size: 1.7rem;
+        font-weight: 500;
+        display: block;
+        margin-bottom: .5rem;
+        color: rgb(11, 8, 53);
+      }
+
+      &__input {
+        padding: .7rem 3rem;
+        width: 100%;
+        border-radius: .4rem;
+        border: 1px solid #919191;
+        outline: none;
+      }
+
+      &__button {
+        margin-top: 2rem;
+        width: 60%;
+        padding: .5rem 4rem;
+        background-color: rgb(74, 114, 246);
+        border: 1px solid #919191;
+        border-radius: .4rem;
+        text-align: center;
+
+        color: white;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+    }
+
+    &__social-network {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin-bottom: 1rem;
+
+      &__link {
+        cursor: pointer;
+      }
+    }
+
+    &__create {
+      text-align: center;
+      font-size: 1rem;
+    }
+
+  }
+
+}
+
+
+@media screen and (max-width: 1300px) {
+  .login-container {
+
+    margin-top: -10rem;
+
+    width: 20rem;
+    height: 35rem;
+
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__form {
+
+      &__item {
+        &__label {
+          font-size: 1.3rem;
+        }
+
+        &__button {
+          font-size: .8rem;
+        }
+      }
+
+      &__social-network {
+        &__link {
+          width: 30px;
+          height: auto;
+        }
+      }
+
+      &__create {
+        text-align: center;
+        font-size: .8rem;
+      }
+
+    }
+
+  }
+}
