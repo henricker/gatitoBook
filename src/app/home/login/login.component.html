@@ -1,22 +1,64 @@
 <div class="login-container">
-<h3 class="login-container__title">Login</h3>
-<form class="login-container__form">
+  <h3 class="login-container__title">Login</h3>
+  <form class="login-container__form" id="formLogin" (ngSubmit)="login()" #formLogin="ngForm">
     <div class="login-container__form__item">
-      <label class="login-container__form__item__label" for="userName">Usuário:</label>
-      <input class="login-container__form__item__input" type="text" name="userName" id="userName"/>
+      <label class="login-container__form__item__label" for="userName"
+        >Usuário:</label
+      >
+      <input
+        class="login-container__form__item__input"
+        type="text"
+        name="userName"
+        id="userName"
+        [(ngModel)]="user.userName"
+        #userName = "ngModel"
+        required
+      />
+      <div *ngIf="userName.invalid && userName.touched">
+        <app-message-error message="Campo usuário não pode ser vazio"></app-message-error>
+      </div>
     </div>
     <div class="login-container__form__item">
-      <label class="login-container__form__item__label" for="password">Senha:</label>
-      <input class="login-container__form__item__input"type="password" name="password" id="password">
+      <label class="login-container__form__item__label" for="password"
+        >Senha:</label
+      >
+      <input
+        class="login-container__form__item__input"
+        type="password"
+        name="password"
+        id="password"
+        [(ngModel)]="user.password"
+        #password = "ngModel"
+        required
+      />
+      <div *ngIf="password.invalid && password.touched">
+        <app-message-error
+          message="Campo senha não pode ser vazio"
+        ></app-message-error>
+      </div>
     </div>
     <div class="login-container__form__item">
-      <input class="login-container__form__item__button"type="submit" value="Login">
+      <button class="login-container__form__item__button" [disabled]="formLogin.invalid && formLogin.touched">Login</button>
     </div>
     <div class="login-container__form__social-network">
-      <a class="login-container__form__social-network__link"><img src="assets/home/login/facebook-icon.svg" width="50" height="auto"/></a>
-      <a class="login-container__form__social-network__link"><img src="assets/home/login/google-icon.svg" width="50" height="auto"/></a>
-      <a class="login-container__form__social-network__link"><img src="assets/home/login/pinterest-icon.svg" width="50" height="auto"/></a>
+      <a class="login-container__form__social-network__link"
+        ><img
+          src="assets/home/login/facebook-icon.svg"
+          width="50"
+          height="auto"
+      /></a>
+      <a class="login-container__form__social-network__link"
+        ><img src="assets/home/login/google-icon.svg" width="50" height="auto"
+      /></a>
+      <a class="login-container__form__social-network__link"
+        ><img
+          src="assets/home/login/pinterest-icon.svg"
+          width="50"
+          height="auto"
+      /></a>
     </div>
-</form>
-  <p class="login-container__form__create">Ainda não possui conta? <a [routerLink]="['registrar']">registre-se</a></p>
+  </form>
+  <p class="login-container__form__create">
+    Ainda não possui conta? <a [routerLink]="['registrar']">registre-se</a>
+  </p>
 </div>

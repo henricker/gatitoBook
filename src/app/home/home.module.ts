@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { FormsModule } from '@angular/forms';
+import { MessageErrorModule } from '../generic/message-error/message-error.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { HomeRoutingModule } from './home-routing.module';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FormsModule,
+    MessageErrorModule
   ],
   exports: [
     HomeComponent
