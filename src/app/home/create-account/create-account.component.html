@@ -1,34 +1,154 @@
 <div class="login-container">
   <h3 class="login-container__title">Criar conta</h3>
-  <form class="login-container__form">
+  <form
+    class="login-container__form"
+    [formGroup]="createAccountForm"
+    (submit)="register()"
+  >
     <div class="login-container__form__item">
-      <label class="login-container__form__item__label" for="userName">Nome:</label>
-      <input class="login-container__form__item__input" type="text" name="userName" id="userName"/>
+      <label class="login-container__form__item__label" for="userName"
+        >Nome:</label
+      >
+      <input
+        class="login-container__form__item__input"
+        type="text"
+        name="name"
+        id="userName"
+        formControlName="fullName"
+      />
+      <app-message-error
+        *ngIf="
+          createAccountForm.get('fullName')?.errors?.required &&
+          createAccountForm.get('fullName')?.touched
+        "
+        message="Campo nome é obrigatório"
+      ></app-message-error>
     </div>
     <div class="login-container__form__item">
-      <label class="login-container__form__item__label" for="userName">Email:</label>
-      <input class="login-container__form__item__input" type="text" name="userName" id="userName"/>
+      <label class="login-container__form__item__label" for="userName"
+        >Email:</label
+      >
+      <input
+        class="login-container__form__item__input"
+        type="text"
+        name="email"
+        id="userName"
+        formControlName="email"
+      />
+      <app-message-error
+        *ngIf="
+          createAccountForm.get('email')?.errors?.required &&
+          createAccountForm.get('email')?.touched
+        "
+        message="Campo email é obrigatório"
+      ></app-message-error>
+      <app-message-error
+        *ngIf="
+          createAccountForm.get('email')?.errors?.email &&
+          createAccountForm.get('email')?.touched
+        "
+        message="Formato de email inválido"
+      ></app-message-error>
     </div>
-      <div class="login-container__form__item">
-        <label class="login-container__form__item__label" for="userName">Usuário:</label>
-        <input class="login-container__form__item__input" type="text" name="userName" id="userName"/>
-      </div>
-      <div class="login-container__form__item">
-        <label class="login-container__form__item__label" for="password">Senha:</label>
-        <input class="login-container__form__item__input"type="password" name="password" id="password">
-      </div>
-      <div class="login-container__form__item">
-        <label class="login-container__form__item__label" for="password">Confirme sua senha:</label>
-        <input class="login-container__form__item__input"type="password" name="password" id="password">
-      </div>
-      <div class="login-container__form__item">
-        <input class="login-container__form__item__button"type="submit" value="Criar conta">
-      </div>
-      <div class="login-container__form__social-network">
-        <a class="login-container__form__social-network__link"><img src="assets/home/login/facebook-icon.svg" width="50" height="auto"/></a>
-        <a class="login-container__form__social-network__link"><img src="assets/home/login/google-icon.svg" width="50" height="auto"/></a>
-        <a class="login-container__form__social-network__link"><img src="assets/home/login/pinterest-icon.svg" width="50" height="auto"/></a>
-      </div>
+    <div class="login-container__form__item">
+      <label class="login-container__form__item__label" for="userName"
+        >Usuário:</label
+      >
+      <input
+        class="login-container__form__item__input"
+        type="text"
+        name="userName"
+        id="userName"
+        formControlName="userName"
+      />
+      <app-message-error
+        *ngIf="
+          createAccountForm.get('userName')?.errors?.required &&
+          createAccountForm.get('userName')?.touched
+        "
+        message="Campo usuário é inválido"
+      ></app-message-error>
+      <app-message-error
+        *ngIf="
+          createAccountForm.get('userName')?.errors?.lowerCase &&
+          createAccountForm.get('userName')?.touched
+        "
+        message="Campo usuário não pode conter letras maíusculas"
+      ></app-message-error>
+    </div>
+    <div class="login-container__form__item">
+      <label class="login-container__form__item__label" for="password"
+        >Senha:</label
+      >
+      <input
+        class="login-container__form__item__input"
+        type="password"
+        name="password"
+        id="password"
+        formControlName="password"
+      />
+      <app-message-error
+        *ngIf="
+          createAccountForm.get('password')?.errors?.required &&
+          createAccountForm.get('password')?.touched
+        "
+        message="Campo senha é obrigatório"
+      ></app-message-error>
+      <app-message-error
+        *ngIf="createAccountForm.errors?.usernameEqualsPassword"
+        message="Campo senha deve ser diferente do campo usuário"
+      ></app-message-error>
+    </div>
+    <div class="login-container__form__item">
+      <label class="login-container__form__item__label" for="password"
+        >Confirme sua senha:</label
+      >
+      <input
+        class="login-container__form__item__input"
+        type="password"
+        name="password"
+        id="password"
+        formControlName="confirmPassword"
+      />
+      <app-message-error
+        *ngIf="
+          createAccountForm.get('confirmPassword')?.errors?.required &&
+          createAccountForm.get('confirmPassword')?.touched
+        "
+        message="Campo de confirmação de senha é obrigatório"
+      ></app-message-error>
+      <app-message-error
+        *ngIf="createAccountForm.errors?.passwordNotEqualsConfirmPassword"
+        message="As senhas não correspondem"
+      ></app-message-error>
+    </div>
+    <div class="login-container__form__item">
+      <button
+        class="login-container__form__item__button"
+        [disabled]="createAccountForm.invalid && createAccountForm.touched"
+      >
+        Criar conta
+      </button>
+    </div>
+    <div class="login-container__form__social-network">
+      <a class="login-container__form__social-network__link"
+        ><img
+          src="assets/home/login/facebook-icon.svg"
+          width="50"
+          height="auto"
+      /></a>
+      <a class="login-container__form__social-network__link"
+        ><img src="assets/home/login/google-icon.svg" width="50" height="auto"
+      /></a>
+      <a class="login-container__form__social-network__link"
+        ><img
+          src="assets/home/login/pinterest-icon.svg"
+          width="50"
+          height="auto"
+      /></a>
+    </div>
   </form>
-    <p class="login-container__form__login">Já possui conta?<a [routerLink]="['']"> Faça o login</a></p>
-  </div>
+  <p class="login-container__form__login">
+    Já possui conta?<a [routerLink]="['']"> Faça o login</a>
+  </p>
+</div>

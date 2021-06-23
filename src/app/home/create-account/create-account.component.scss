@@ -1,12 +1,11 @@
 .login-container {
-
   margin-top: -6rem;
 
   width: 26rem;
-  height: 42rem;
-  background-color: rgba(202, 207, 212, .6);
-  padding: 1rem;
-  border-radius: .5rem;
+  height: auto;
+  background-color: rgba(202, 207, 212, 0.6);
+  padding: 2rem;
+  border-radius: 0.5rem;
 
   &__title {
     font-size: 1.5rem;
@@ -26,28 +25,28 @@
         font-size: 1rem;
         font-weight: 500;
         display: block;
-        margin-bottom: .2rem;
+        margin-bottom: 0.2rem;
         color: rgb(11, 8, 53);
       }
 
       &__input {
-        padding: .4rem 3rem;
+        padding: 0.4rem 3rem;
         width: 100%;
-        border-radius: .4rem;
+        border-radius: 0.4rem;
         border: 1px solid #919191;
         outline: none;
       }
 
       &__button {
         width: 60%;
-        padding: .2rem 4rem;
+        padding: 0.2rem 4rem;
         background-color: rgb(74, 114, 246);
         border: 1px solid #919191;
-        border-radius: .4rem;
+        border-radius: 0.4rem;
         text-align: center;
 
         color: white;
-        font-size: .9rem;
+        font-size: 0.9rem;
         cursor: pointer;
       }
     }
@@ -68,34 +67,28 @@
       text-align: center;
       font-size: 1rem;
     }
-
   }
-
 }
-
 
 @media screen and (max-width: 1300px) {
   .login-container {
-
     margin-top: -10rem;
 
     width: 20rem;
     height: 44rem;
-
 
     &__title {
       font-size: 1.2rem;
     }
 
     &__form {
-
       &__item {
         &__label {
-          font-size: .8rem;
+          font-size: 0.8rem;
         }
 
         &__button {
-          font-size: .8rem;
+          font-size: 0.8rem;
         }
       }
 
@@ -108,10 +101,8 @@
 
       &__create {
         text-align: center;
-        font-size: .8rem;
+        font-size: 0.8rem;
       }
-
     }
-
   }
 }
