@@ -6,7 +6,7 @@
   align-items: row;
   justify-content: space-between;
   align-items: center;
-  padding: .4rem;
+  padding: 0.4rem;
 
   &__icon {
     display: flex;
@@ -18,7 +18,7 @@
     &__name {
       font-size: 1.3rem;
       margin-top: -2rem;
-      margin-left: .7rem;
+      margin-left: 0.7rem;
       color: #fff;
     }
   }
@@ -34,7 +34,6 @@
       list-style-type: none;
 
       &__item {
-
         margin-right: 2rem;
         cursor: pointer;
         &__link {
@@ -65,7 +64,7 @@
         width: 100%;
         text-align: center;
         border: 1px solid #ccc;
-        padding: .3rem;
+        padding: 0.3rem;
         cursor: pointer;
 
         &__link {
@@ -78,7 +77,6 @@
 }
 
 @media screen and (max-width: 1300px) {
-
   .header-gatito {
     &__icon {
       &__name {
@@ -90,7 +88,7 @@
 
 @media screen and (max-width: 768px) {
   .header-gatito {
-    padding: .4rem 0rem 0rem 0rem;
+    padding: 0.4rem 0rem 0rem 0rem;
 
     &__icon {
       margin-left: 0;
@@ -105,7 +103,6 @@
       &__list {
         &__item {
           &__link {
-
           }
         }
       }
