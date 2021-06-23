@@ -1,5 +1,11 @@
 # GatitobookV2
 
+## Interface login and create account form
+### Front end are creating with angular
+![Login form](src/assets/ToReadmeGithub/LoginForm.png)
+
+![Create Account form](src/assets/ToReadmeGithub/CreateAccountForm.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
 
 ## Development server
